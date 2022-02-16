@@ -13,6 +13,11 @@
  *
  */
 
+//* Fazendo o Deploy - inicar a conf. da varável de ambiente...
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
 // 1°) Importando as bobliotecas/ libs necessarias...
 const express = require("express");
 const cors = require("cors");
@@ -33,8 +38,14 @@ app.use(cors());
 // 26°) Chamando as rotas...
 app.use("/tarefas", tarefasRouter);
 
+//** Buscando os dados das viaveis de ambiente...
+const db_url = process.env.DB_URL;
+const db_user = process.env.DB_USER;
+const db_pass = process.env.DB_PASS;
+const db_data = process.env.DB_DATA;
+
 // 9°) Chamando a conexão com o banco de dados...
-Conn();
+Conn(db_url, db_user, db_pass, db_data);
 
 // 4°) Definindo a porta de inicialização do servidor...
 const port = 3001;
