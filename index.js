@@ -49,6 +49,9 @@ Conn(db_url, db_user, db_pass, db_data);
 
 // 4°) Definindo a porta de inicialização do servidor...
 const port = 3001;
-app.listen(port, () => {
+app.listen(process.eventNames.PORT | port, () => {
   console.log(`Servidor inicializando na porta: ${port}`);
 });
+
+
+//** Ir no package.json e colocar no scripts "start":"node index",

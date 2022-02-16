@@ -30,3 +30,4 @@ const Conn = (url, user, pass, data) => {
 
 // 7°) Exporto a função de conexão
 module.exports = Conn;
+
