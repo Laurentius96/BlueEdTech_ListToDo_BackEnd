@@ -8,10 +8,10 @@ const tarefasController = require("../controllers/tarefas.controller");
 const router = express.Router();
 
 // 23°) Criando o EndPoint [GET] /tarefas - retorna uma lista de tarefas pré cadastrados no banco...
-router.get("/", tarefasController.getTarefas);
+router.get("/get-tarefas", tarefasController.getTarefas);
 
 // 29°) [GET] /get-tarefas-id/{id} - retorna um game de acordo com seu id
-router.get("/:id", tarefasController.getTarefaById);
+router.get("/get-tarefa-id/:id", tarefasController.getTarefaById);
 
 // 34°) [POST] /tarefa/add - Cadastra uma nova tarefa no banco de dados...
 router.post("/create", tarefasController.createTarefa);
